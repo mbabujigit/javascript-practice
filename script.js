@@ -1,28 +1,15 @@
-//Function Declaration
-function generateOTP() {
-    var otp = Math.floor(1000 + Math.random() * 900000);
-    return otp.toString().padStart(6, "0");
-}
+var arr = [1,2,3]
+console.log(arr);
+console.log(typeof(arr));
 
-//Function Expression
-var generateOTP2 = function () {
-    console.log(a);
-};
+arr.push(10);
+console.log(arr);
 
-generateOTP();
-var a='Babuji';
-//Anonymous Function
-//IIFE
-(function () {
-    var a='Mannamma';
-    var otp = Math.floor(1000 + Math.random() * 900000);
-    console.log(otp.toString().padStart(6, "0")); //otp.toString().padStart(6, "0");
-    console.log(a);
-})();
-console.log(a);
+arr.pop();
+console.log(arr);
 
-//hoisting
-console.log(generateOTP());
-console.log(generateOTP2());
+arr.unshift(5,6);
+console.log(arr);
 
-//falsy values  0, "", undefined, null, NaN 
+arr.shift(4,3);
+console.log(arr);
