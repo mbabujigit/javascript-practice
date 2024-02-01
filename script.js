@@ -1,23 +1,20 @@
-var student={
-    name: "Babuji",
-    age: 40,
-    marks: 90,
-    address: {
-        city:"Chennai"
+var arr = [0, 1, false, true, "a", `b`, null, NaN, undefined];
+var output = [];
+for (var i = 0; i < arr.length; i++) {
+    //console.log(arr[i]);
+    if (arr[i]) {
+        output.push(arr[i]); // output = arr[i]
+    }
+}
+console.log(output) ;
+var output2 = [];
+var name="Babuji";
+console.log(name.length)
+for(var value of name){
+    console.log(value);
+    if(value){
+        output2.push(value);
     }
 }
 
-console.log(student);
-console.log(typeof(student));
-
-var keys = Object.keys(student);
-console.log(keys);
-
-var values = Object.values(student);
-console.log(values);
-
-var entries = Object.entries(student);
-console.log(entries);
-
-var array = Object.entries(student);
-console.log(array[3][1]);
+console.log(output2) ;
