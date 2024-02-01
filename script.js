@@ -1,15 +1,23 @@
-var arr = [1,2,3]
-console.log(arr);
-console.log(typeof(arr));
+var student={
+    name: "Babuji",
+    age: 40,
+    marks: 90,
+    address: {
+        city:"Chennai"
+    }
+}
 
-arr.push(10);
-console.log(arr);
+console.log(student);
+console.log(typeof(student));
 
-arr.pop();
-console.log(arr);
+var keys = Object.keys(student);
+console.log(keys);
 
-arr.unshift(5,6);
-console.log(arr);
+var values = Object.values(student);
+console.log(values);
 
-arr.shift(4,3);
-console.log(arr);
+var entries = Object.entries(student);
+console.log(entries);
+
+var array = Object.entries(student);
+console.log(array[3][1]);
