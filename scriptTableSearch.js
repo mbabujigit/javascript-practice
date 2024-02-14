@@ -13,15 +13,6 @@ var students = [
     { name: "Pranathi", age: 10, gender: "Female" },
 ];
 
-students = students.map(function (student) {
-    if (student.gender === "Male") {
-        student.color = "blue";
-    } else {
-        student.color = "red";
-    }
-    return student;
-});
-
 var tableBody = document.getElementById("tableBody");
 
 bindData(students);
@@ -46,34 +37,8 @@ function bindData(students) {
         return `<tr>
         <td>${students.name}</td>
         <td>${students.age}</td>
-        <td style="color:${students.color}">${students.gender}</td>
-        <td><button class="btn btn-danger" onclick="deleteRow(this)">Delete</button></td>
+        <td>${students.gender}</td>
         </tr>`;
     });
     tableBody.innerHTML = studentsHtml.join('');
-}
-
-function deleteRow(row) {
-    var index = row.parentNode.parentNode.rowIndex;
-    document.getElementById("table").deleteRow(index);
-}
-
-function filterTable() {
-    var genderFilter = document.getElementById("genderFilter").value;
-    var table = document.getElementById("table");
-    var rows = table.getElementsByTagName("tr");
-
-    for (var i = 0; i < rows.length; i++) {
-
-        var genderCell = rows[i].getElementsByTagName("td")[2];
-        if (genderCell) {
-            var gender = genderCell.textContent || genderCell.innerText;
-            if (gender === genderFilter || genderFilter === "all") {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-        }
-    }
-
 }

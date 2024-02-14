@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Filter</title>
+  <style>
+    /* Some basic styling for demonstration purposes */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="filterDropdown">Select Category:</label>
+  <select id="filterDropdown">
+    <option value="all">All</option>
+    <option value="category1">Category 1</option>
+    <option value="category2">Category 2</option>
+    <!-- Add more options as needed -->
+  </select>
+
+  <div id="filteredContent">
+    <!-- Content to be filtered goes here -->
+    <div class="item" data-category="category1">Item 1 (Category 1)</div>
+    <div class="item" data-category="category2">Item 2 (Category 2)</div>
+    <div class="item" data-category="category1">Item 3 (Category 1)</div>
+    <!-- Add more items as needed -->
+  </div>
+
+  <script>
+    document.getElementById('filterDropdown').addEventListener('change', function () {
+      var selectedCategory = this.value;
+      var items = document.querySelectorAll('.item');
+
+      items.forEach(function (item) {
+        var itemCategory = item.getAttribute('data-category');
+
+        if (selectedCategory === 'all' || selectedCategory === itemCategory) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
