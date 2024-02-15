@@ -58,22 +58,17 @@ function deleteRow(row) {
     document.getElementById("table").deleteRow(index);
 }
 
-function filterTable() {
-    var genderFilter = document.getElementById("genderFilter").value;
-    var table = document.getElementById("table");
-    var rows = table.getElementsByTagName("tr");
+document.getElementById("genderFilter").addEventListener("change", filterTable);
 
-    for (var i = 0; i < rows.length; i++) {
-
-        var genderCell = rows[i].getElementsByTagName("td")[2];
-        if (genderCell) {
-            var gender = genderCell.textContent || genderCell.innerText;
-            if (gender === genderFilter || genderFilter === "all") {
-                rows[i].style.display = "";
-            } else {
-                rows[i].style.display = "none";
-            }
-        }
-    }
+function filterTable(event) {
+    // try {
+    //     console.log(event.target.value.haa.gg);
+    // } catch (error) {
+    //     console.log(error);
+    // }
+    var filteredStudents = students.filter(function (student) {
+        return student.gender?.toLowerCase() === event.target?.value?.toLowerCase()
+    });
+    bindData(filteredStudents);
 
 }
