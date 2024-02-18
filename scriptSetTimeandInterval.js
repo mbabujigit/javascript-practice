@@ -11,7 +11,7 @@
 // }
 
 // // CountDown and Timer and Interval and Timeout and SetInterval and SetTimeout
-var countDown = 10;
+ var countDown = 10;
 
 var interval = setInterval(function () {
     console.log(countDown--);
